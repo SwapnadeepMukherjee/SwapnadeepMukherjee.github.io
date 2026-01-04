@@ -1694,19 +1694,19 @@ input, select, textarea {
 		}
 
 		/* Mobile Fix for About Section */
-		@media screen and (max-width: 768px) {
-			
-			/* 1. Stack the image and text vertically */
+		@media screen and (max-width: 736px) {
+			/* Stop the image from floating to the side */
 			.image.left, .image.right {
-				float: none;       /* Stop the side-by-side alignment */
-				display: block;    /* Make the image take up its own line */
-				margin: 0 auto 2em auto; /* Center the image and add space below it */
-				max-width: 100%;   /* Ensure image doesn't exceed screen width */
+				float: none !important;
+				display: block;
+				margin: 0 auto 1.5em auto; /* Center image and add space below */
+				max-width: 100%;
 			}
 
-			/* 2. prevent horizontal scrolling on text */
-			p {
-				width: 100%;
-				overflow-wrap: break-word; /* Force long words to break if necessary */
+			/* Ensure text containers don't have fixed widths */
+			p, h1, h2, h3 {
+				width: auto !important;
+				max-width: 100%;
+				overflow-wrap: break-word; /* Prevents long URLs/words from breaking layout */
 			}
 		}
