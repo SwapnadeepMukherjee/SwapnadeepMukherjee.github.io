@@ -748,6 +748,11 @@ input, select, textarea {
 
 		}
 
+		img {
+    	max-width: 100%;
+    	height: auto;
+		}
+
 /* List */
 
 	ol {
@@ -1686,4 +1691,22 @@ input, select, textarea {
 
 		body.is-preload #footer {
 			opacity: 0;
+		}
+
+		/* Mobile Fix for About Section */
+		@media screen and (max-width: 768px) {
+			
+			/* 1. Stack the image and text vertically */
+			.image.left, .image.right {
+				float: none;       /* Stop the side-by-side alignment */
+				display: block;    /* Make the image take up its own line */
+				margin: 0 auto 2em auto; /* Center the image and add space below it */
+				max-width: 100%;   /* Ensure image doesn't exceed screen width */
+			}
+
+			/* 2. prevent horizontal scrolling on text */
+			p {
+				width: 100%;
+				overflow-wrap: break-word; /* Force long words to break if necessary */
+			}
 		}
